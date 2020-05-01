@@ -41,7 +41,9 @@ Installation using Docker
 * open your browser and visit localhost:8080/web/setup/index.html
 
 * setup cron
-  `0 0,6,12,18 * * * /usr/bin/php <path-to-partkeepr>/app/console partkeepr:cron:run`
+  
+  `0 0,6,12,18 * * * cd /full/path/to/partkeepr && docker-compose exec app /usr/local/bin/php app/console partkeepr:cron:run`
+
 
 Thanks
 ------

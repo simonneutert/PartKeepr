@@ -51,6 +51,7 @@ RUN pecl install apcu_bc-beta \
     && docker-php-ext-enable apcu
 
 COPY docker/php_datetime.ini "${PHP_INI_DIR}/conf.d/"
+COPY docker/php_max_execution_time.ini "${PHP_INI_DIR}/conf.d/"
 
 COPY . ./
 
