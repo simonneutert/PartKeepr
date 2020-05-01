@@ -32,6 +32,17 @@ Installation
 
 Please read our [setup guide](documentation/Installation.md)
 
+Installation using Docker
+-------------------------
+
+* clone the repository from git
+* edit docker-compose.yml, setting an appropriate MYSQL_PASSWORD
+* $ docker-compose up
+* open your browser and visit localhost:8080/web/setup/index.html
+
+* setup cron
+  `0 0,6,12,18 * * * /usr/bin/php <path-to-partkeepr>/app/console partkeepr:cron:run`
+
 Thanks
 ------
 

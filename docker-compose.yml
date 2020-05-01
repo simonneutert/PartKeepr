@@ -1,0 +1,26 @@
+version: "3.3"
+
+services:
+  app:
+    depends_on: 
+      - database
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports: 
+      - "1337:80"
+    environment: 
+      - PARTKEEPR_DATABASE_HOST
+      - PARTKEEPR_DATABASE_NAME
+      - PARTKEEPR_DATABASE_PORT
+      - PARTKEEPR_DATABASE_USER
+      - PARTKEEPR_DATABASE_PASS
+
+  database:
+    image: mariadb:10.0
+    restart: on-failure
+    environment:
+      - MYSQL_RANDOM_ROOT_PASSWORD=yes
+      - MYSQL_DATABASE=partkeepr
+      - MYSQL_USER=partkeepr
+      - MYSQL_PASSWORD=partkeepr
