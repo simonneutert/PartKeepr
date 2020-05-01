@@ -1,4 +1,4 @@
-version: "3.3"
+version: "2" # rpi lags a bit behind
 
 services:
   app:
@@ -17,7 +17,8 @@ services:
       - PARTKEEPR_DATABASE_PASS
 
   database:
-    image: mariadb:10.0
+    # image: linuxserver/mariadb # for use on raspberry pi 3 or 4
+    image: mariadb:10.0 # intel/amd
     restart: on-failure
     environment:
       - MYSQL_RANDOM_ROOT_PASSWORD=yes
